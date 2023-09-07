@@ -6,9 +6,13 @@ sliders.forEach(function(slider){
 });
 
 let inputs = document.querySelectorAll("input[type='number']");
+let blobInput = document.querySelector("input[type='color']")
+let blob = document.getElementById("blob")
 inputs.forEach(function(inp){
   inp.addEventListener("change",createBlob);
 });
+
+blobInput.addEventListener("change", createBlob)
 
 function createBlob(){
   let radiusOne = sliders[0].value;
@@ -18,10 +22,11 @@ function createBlob(){
 
   let blobHeight = inputs[0].value;
   let blobWidth = inputs[1].value;
-
+  let blobColor = blobInput.value
   let borderRadius = `${radiusOne}% ${100 - radiusOne}% ${100 - radiusThree}% ${radiusThree}% / ${radiusFour}% ${radiusTwo}% ${100 - radiusTwo}% ${100 - radiusFour}%`;
 
-  document.getElementById("blob").style.cssText = `border-radius: ${borderRadius}; height: ${blobHeight}px; width: ${blobWidth}px`;
+  blob.style.cssText = `border-radius: ${borderRadius}; height: ${blobHeight}px; width: ${blobWidth}px;`;
+  blob.style.backgroundColor = `${blobColor}`
 
   outputCode.value = `border-radius: ${borderRadius};`
 }

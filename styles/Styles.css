@@ -34,10 +34,6 @@ body{
 #blob{
     height: 300px;
     width: 300px;
-    background: linear-gradient(
-            #11131e,
-            #11131e
-    );
     box-shadow: 15px 20px 30px rgba(0,0,0,0.15);
 }
 .dimensions{
