@@ -47,6 +47,10 @@ body{
     margin: 20px 0 40px 0;
 }
 label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
     font-weight: 500;
 }
 input[type="number"]{
